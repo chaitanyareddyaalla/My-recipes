@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Details</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">My Recipes</div>
+        <ul class="nav-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="recipes.html">Recipes</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <!-- Recipe Header -->
+        <div class="recipe-header">
+            <img id="recipeImage" class="recipe-image" src="" alt="Recipe Image">
+            <div class="recipe-details">
+                <h1 id="recipeName">Recipe Name</h1>
+                <p id="recipeDescription">Recipe description goes here.</p>
+            </div>
+        </div>
+
+        <!-- Recipe Info Section -->
+        <div class="recipe-info">
+            <div class="info-card">
+                <span>Servings</span>
+                <div class="servings-control">
+                    <button id="decrease">-</button>
+                    <span id="servings">1</span>
+                    <button id="increase">+</button>
+                </div>
+            </div>
+            <div class="info-card">
+                <span>Prep Time</span>
+                <span id="prepTime"></span>
+            </div>
+            <div class="info-card">
+                <span>Cook Time</span>
+                <span id="cookTime"></span>
+            </div>
+            <div class="info-card">
+                <span>Total Time</span>
+                <span id="totalTime"></span>
+            </div>
+        </div>
+
+        <!-- Taste Sliders Section -->
+        <div class="taste-customization">
+            <h2>Customize Taste</h2>
+            <div class="taste-slider">
+                <label>
+                    <span>Spiciness</span>
+                    <span id="spicinessValue">Normal</span>
+                </label>
+                <input type="range" id="spicinessSlider" min="0" max="3" value="0">
+            </div>
+            <div class="taste-slider">
+                <label>
+                    <span>Sweetness</span>
+                    <span id="sweetnessValue">Normal</span>
+                </label>
+                <input type="range" id="sweetnessSlider" min="0" max="3" value="0">
+            </div>
+            <div class="taste-slider">
+                <label>
+                    <span>Sourness</span>
+                    <span id="sournessValue">Normal</span>
+                </label>
+                <input type="range" id="sournessSlider" min="0" max="3" value="0">
+            </div>
+            <div class="taste-slider">
+                <label>
+                    <span>Saltiness</span>
+                    <span id="saltinessValue">Normal</span>
+                </label>
+                <input type="range" id="saltinessSlider" min="0" max="3" value="0">
+            </div>
+        </div>
+
+        <!-- Recipe Content Section -->
+        <div class="recipe-content">
+            <div class="ingredients">
+                <h2>Ingredients</h2>
+                <ul id="ingredientsList">
+                    <!-- Ingredients will be populated dynamically -->
+                </ul>
+            </div>
+            <div class="instructions">
+                <h2>Instructions</h2>
+                <ol id="instructionsList">
+                    <!-- Instructions will be populated dynamically -->
+                </ol>
+            </div>
+        </div>
+    </div>
+    
+
+    <script src="script.js"></script>
+</body>
+</html>

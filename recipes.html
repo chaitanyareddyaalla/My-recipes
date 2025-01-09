@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Customizer</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">My Recipes</div>
+        <ul class="nav-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="recipes.html">Recipes</a></li>
+        </ul>
+    </nav>
+
+    <div class="hero">
+        <h2>Select you Favorite Recipe to customize</h2>
+        <span>Scroll to see your Recipe Customization</span>
+
+    </div>
+    
+    <div class="container">
+        <div id="recipeButtons" class="recipe-buttons">
+        </div>
+
+        <div id="tasteCustomization" class="taste-customization hidden">
+            <h2>Customize Taste</h2>
+            <div class="taste-slider">
+                <label>
+                    <span>Spiciness</span>
+                    <span id="spicinessValue">Normal</span>
+                </label>
+                <input type="range" id="spicinessSlider" min="0" max="3" value="0" 
+                       oninput="updateTaste('spiciness', this.value)">
+            </div>
+            <div class="taste-slider">
+                <label>
+                    <span>Sweetness</span>
+                    <span id="sweetnessValue">Normal</span>
+                </label>
+                <input type="range" id="sweetnessSlider" min="0" max="3" value="0"
+                       oninput="updateTaste('sweetness', this.value)">
+            </div>
+            <div class="taste-slider">
+                <label>
+                    <span>Sourness</span>
+                    <span id="sournessValue">Normal</span>
+                </label>
+                <input type="range" id="sournessSlider" min="0" max="3" value="0"
+                       oninput="updateTaste('sourness', this.value)">
+            </div>
+            <div class="taste-slider">
+                <label>
+                    <span>Saltiness</span>
+                    <span id="saltinessValue">Normal</span>
+                </label>
+                <input type="range" id="saltinessSlider" min="0" max="3" value="0"
+                       oninput="updateTaste('saltiness', this.value)">
+            </div>
+            <div class="taste-slider" style="display: none;">
+                <label>
+                    <span>Bitterness</span>
+                    <span id="bitternessValue">Normal</span>
+                </label>
+                <input type="range" id="bitternessSlider" min="0" max="3" value="0"
+                       oninput="updateTaste('bitterness', this.value)">
+            </div>
+        </div>
+
+        <div id="recipeDisplay" class="hidden">
+            <div class="recipe-header">
+                <img id="recipeImage" src="" alt="Recipe Image">
+                <div class="recipe-title">
+                    <h1 id="recipeName"></h1>
+                    <p id="recipeDescription"></p>
+                </div>
+            </div>
+
+            <div class="recipe-info">
+                <div class="info-card">
+                    <span>Servings</span>
+                    <div class="servings-control">
+                        <button id="decrease">-</button>
+                        <span id="servings">4</span>
+                        <button id="increase">+</button>
+                    </div>
+                </div>
+                <div class="info-card">
+                    <span>Prep Time</span>
+                    <span id="prepTime"></span>
+                </div>
+                <div class="info-card">
+                    <span>Cook Time</span>
+                    <span id="cookTime"></span>
+                </div>
+                <div class="info-card">
+                    <span>Total Time</span>
+                    <span id="totalTime"></span>
+                </div>
+            </div>
+
+            <div class="recipe-content">
+                <div class="ingredients">
+                    <h2>Ingredients</h2>
+                    <ul id="ingredientsList"></ul>
+                </div>
+                <div class="instructions">
+                    <h2>Instructions</h2>
+                    <ol id="instructionsList"></ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="recipeImageGrid" class="recipe-image-grid hidden">
+    <!-- Images will be dynamically inserted here -->
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
